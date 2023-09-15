@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
     int czas = 0;
-    if()
+    if(i=0)
 
         
 
