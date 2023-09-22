@@ -4,15 +4,15 @@ using namespace std;
 
 int main()
 {
-    int czas = 0;
-    if(i=0)dfbgsrbgb
 
-        
+    int Number = 5;
+    int secondNumber = Number + 3;
+    cout << secondNumber;
 
-
+}
     
 
        
    
-}
+
  
