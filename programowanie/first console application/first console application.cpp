@@ -1,4 +1,3 @@
-
 #define _USE_MATH_DEFINES
 using namespace std;
 #include <iostream>
@@ -29,9 +28,9 @@ void task2()
 {
     float side_a;
     float side_b;
-    cout << "wpisz dlugosc pierwszego boku";
+    cout << "wpisz dlugosc pierwszego boku\n";
     cin >> side_a;
-    cout << "wpisz dlugosc drugiego boku";
+    cout << "wpisz dlugosc drugiego boku\n";
     cin >> side_b;
     float area = side_a * side_b;
     cout << "pole wynosi:" << area;
@@ -43,12 +42,12 @@ void task3()
 {
     float height;
     float radius;
-    cout << "wpisz wysokosc stozka";
+    cout << "wpisz wysokosc stozka\n";
     cin >> height;
-    cout << "wpisz promien stozka";
+    cout << "wpisz promien stozka\n";
     cin >> radius;
     float volume = 1.0 / 3.0 * M_PI * (radius * radius) * height;
-    cout <<"pole wynosi"<< volume;
+    cout <<"pole wynosi:  "<< volume;
 
 
 }
@@ -56,19 +55,19 @@ void task3()
 void task4()
 {
     float radius;
-    cout << "podaj promien kola";
+    cout << "podaj promien kola\n";
     cin >> radius;
     float area = M_PI * (radius * radius);
-    cout << "pole kola:" << area;
+    cout << "pole kola: " << area;
 }
 //Program obliczaj¹cy wartoœæ wyra¿enia a ^ 2 + b ^ 2
 void task5()
 {
     float a;
     float b;
-    cout << "wpisz a";
+    cout << "wpisz a\n";
     cin >> a;
-    cout << "wpisz b";
+    cout << "wpisz b\n";
     cin >> b;
     float wartosc = (a * a) + (b * b);
     cout << wartosc;
@@ -79,15 +78,60 @@ void task6()
 {
     float b;
     float h;
-    cout << "wpisz b";
+    cout << "wpisz b\n";
     cin >> b;
-    cout << "wpisz h";
+    cout << "wpisz h\n";
     cin >> h;
     float area = 1.0 / 2.0 * b * h;
     cout << area;
 
 
 }
+//Program obliczaj¹cy objêtoœæ kuli o promieniu r
+void task7()
+{
+    int r;
+    cout << "wpisz r\n";
+    cin >> r;
+    float volume = 4.0 / 3.0 * M_PI * pow(r, 3);
+    cout <<"objetosc wynosi: "<< volume;
+}
+//Program obliczaj¹cy pole trapezu o podstawach a i b oraz wysokoœci h
+void task8()
+{
+    float a, b, h;
+    cout << "wpisz a\n";
+    cin >> a;
+    cout << "wpisz b\n";
+    cin >> b;
+    cout << "wpisz h\n";
+    cin >> h;
+    float area = 1.0 / 2.0 * (a + b) * h;
+    cout << "pole wynosi" << area;
+
+
+
+}
+//Program obliczaj¹cy œredni¹ wa¿on¹ trzech liczb z podanymi odpowiednimi wagami w1, w2 i w3.
+void task9()
+{   
+
+    float number1;
+    float number2;
+    float number3;
+        cout << "wpisz pierwsza liczbe\n";
+        cin >> number1;
+        cout << "wpisz druga liczbe\n";
+        cin >> number2;
+        cout << "wpisz trzecia liczbe\n";
+        cin >> number3;
+
+        float srednia = (number1 * 1 + number2 * 2 + number3 * 3) / 6.0;
+        cout <<"srednia wynosi: "<< srednia;
+
+
+}
+
 int main()
 {
     //task1();
@@ -96,8 +140,9 @@ int main()
     //task4();
     //task5();
     //task6();
-
-
+    //task7();
+    //task8();
+    //task9();
 }
     
 /*1. 
