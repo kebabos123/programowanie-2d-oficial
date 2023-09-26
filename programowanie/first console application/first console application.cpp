@@ -147,12 +147,6 @@ void task9()
 
 
 }
-void bettertask9()
-{
-    double grades[2];
-
-
-}
 
 int main()
 {
@@ -165,7 +159,7 @@ int main()
     //task7();
     //task8();
     //task9();
-    bettertask9();
+
 }
 
 /*1.
