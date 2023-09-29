@@ -1,2 +1,2 @@
-# programowanie-2d-oficial
+# programowanie-2d-official
 pierwsze oficjalne repozytorium Karola
