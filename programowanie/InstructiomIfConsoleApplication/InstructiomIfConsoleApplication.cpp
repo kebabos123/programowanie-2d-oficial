@@ -1,6 +1,6 @@
 using namespace std;
 #include <iostream>
-//napisz funkcjê która podzieli 2 liczby
+//napisz funkcjê która podzieli 2 liczby.
 void task1()
 {
     float first_number;
