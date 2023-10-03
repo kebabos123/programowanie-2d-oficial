@@ -1,20 +1,178 @@
-using namespace std;
 #include <iostream>
-//napisz funkcjê która podzieli 2 liczby...
+using namespace std;
+/*
+Operatory porównania:
+== - równoœci
+!= - ró¿noœci
+>
+<
+>=
+<=
+
+*/
+
+/*
+1.
+2. Program sprawdzaj¹cy czy podana liczba jest dodatnia, ujemna czy równa zero
+3. Program sprawdzaj¹cy czy podany rok jest rokiem przestêpnym
+4. Program wyœwietlaj¹cy odpowiedni komunikat w zale¿noœci od podanej oceny (np. "bardzo dobry" dla oceny 5, "dobry" dla oceny 4 itd.)
+5. Program sprawdzaj¹cy czy podane has³o jest poprawne (np. jeœli has³o jest "abc123", program powinien wyœwietliæ "has³o poprawne", jeœli jest inne, powinien wyœwietliæ "has³o niepoprawne").
+6. Program sprawdzaj¹cy czy podana data jest poprawna (np. sprawdzaj¹c, czy dzieñ jest z zakresu od 1 do 31, miesi¹c od 1 do 12 itd.)
+7. Program wyœwietlaj¹cy odpowiedni komunikat w zale¿noœci od podanej temperatury (np. "ciep³o" dla temperatury powy¿ej 20 stopni Celsjusza, "ch³odno" dla temperatury poni¿ej 10 stopni Celsjusza itd.)
+*/
+
+
+
+
+//Program sprawdzaj¹cy czy podana liczba jest parzysta czy nieparzysta
 void task1()
 {
-    float first_number;
-    float second_nuber;
-    cout << "podaj pierwsza liczbe\n";
-    cin >> first_number;
-    cout << "podaj druge liczbe\n";
-    cin >> second_nuber;
-    cout << "wynik dzielenia to\n" << first_number / second_nuber;
-    
+    int number1;
+    cout << "wypisz liczbê\n";
+    cin >> number1;
+    if (number1 % 2 == 0)
+    {
+        cout << "ta liczba jest parzysta";
+    }
+    else
+    {
+        cout << "liczba jest nieparzysta";
+    }
+}
+// Program sprawdzaj¹cy czy podana liczba jest dodatnia, ujemna czy równa zero
+void task2()
+{
+    int number2;
+    cout << "wypisz liczbê\n";
+    cin >> number2;
+    if (number2 % 2 == 0)
+    {
+        cout << "ta liczba jest parzysta";
+    }
+    else if (number2 % 2 != 0)
+    {
+        cout << "liczba jest nieparzysta";
+    }
+    else
+    {
+        cout << "ta liczba jest równa 0";
+
+    }
+
 
 }
+//Program sprawdzaj¹cy czy podany rok jest rokiem przestêpnym
+void task3()
+{
+    int year;
+    cout << "wypisz rok\n";
+    cin >> year;
+    if (year % 4 == 0 && year % 100 != 0||year % 400==0)
+    {
+        cout << "ten rok jest przestêpny";
+    }
+    else
+    {
+        cout << "ten rok nie jest przestêpny";
+    }
+
+
+}
+//Program wyœwietlaj¹cy odpowiedni komunikat w zale¿noœci od podanej oceny (np. "bardzo dobry" dla oceny 5, "dobry" dla oceny 4 itd.)
+void task4()
+{
+    int grade;
+    cout << "wpisz ocene";
+    cin >> grade;
+    if (grade == 6)
+    {
+        cout << "ta ocena jest celuj¹ca";
+    }
+    else if (grade == 5)
+    {
+        cout << "ta ocena jest bardzo dobra";
+    }
+    else if (grade == 4)
+    {
+        cout << "ta ocena jest dobra";
+    }
+    else if (grade == 3)
+    {
+        cout << "ta ocena jest dostateczna";
+    }
+    else if (grade == 2)
+    {
+        cout << "ta ocena jest dopuszczaj¹ca";
+    }
+    else if (grade == 1)
+    {
+        cout << "ta ocena jest niedostateczna";
+    }
+    else
+    {
+        cout << "to nie jest ocena";
+    }
+}
+//Program sprawdzaj¹cy czy podane has³o jest poprawne(np.jeœli has³o jest "abc123", program powinien wyœwietliæ "has³o poprawne",
+//jeœli jest inne, powinien wyœwietliæ "has³o niepoprawne")
+void task5()
+{
+    string password;
+    cout << "wpisz haslo\n";
+    cin >> password;
+    if (password == "abc123")
+    {
+        cout << "haslo jest poprawne";
+    }
+    else
+    {
+        cout << "haslo jest niepoprawne";
+    }
+}
+//Program sprawdzaj¹cy czy podana data jest poprawna (np. sprawdzaj¹c, czy dzieñ jest z zakresu od 1 do 31, miesi¹c od 1 do 12 itd.)
+void task6()
+{
+    int day;
+    int month;
+    cout << "wpisz dzieñ";
+    cin >> day;
+    cout << "wpisz miesi¹c";
+    cin >> month;
+
+    if (day <= 31 && day >= 1 && month <= 12 && month >= 1)
+    {
+        cout << "ta data jest poprawna\n";
+    }
+    else if (month == 2 && day >= 28 && day < 31)
+    {
+        cout << "leacz nie dla lutego kolego";
+    }
+    else
+    {
+        cout << "ta data jest niepoprawna";
+    }
+
+}
+//Program wyœwietlaj¹cy odpowiedni komunikat w zale¿noœci od podanej temperatury(np. "ciep³o" dla temperatury powy¿ej 20 stopni Celsjusza,
+//"ch³odno" dla temperatury poni¿ej 10 stopni Celsjusza itd.)
+void task7()
+{
+    float temperature;
+    cout << "wpisz temperaturê";
+    cin >> temperature;
+}
+
+
+
 int main()
 {
     setlocale(LC_CTYPE, "polish");
-    task1();
+
+    //task1();
+    //task2();
+    //task3();
+    //task4();
+    //task5();
+    task6();
+    //task7();
 }
