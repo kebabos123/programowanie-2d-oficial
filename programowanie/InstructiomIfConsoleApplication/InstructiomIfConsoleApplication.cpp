@@ -139,19 +139,14 @@ void task6()
     cout << "wpisz miesi¹c";
     cin >> month;
 
-    if (day <= 31 && day >= 1 && month <= 12 && month >= 1)
+    if (day <= 31 && day >= 1 && month <= 12 && month >= 1 )
     {
         cout << "ta data jest poprawna\n";
     }
-    else if (month == 2 && day >= 28 && day < 31)
-    {
-        cout << "leacz nie dla lutego kolego";
-    }
     else
     {
-        cout << "ta data jest niepoprawna";
+        cout << "ta data nie jest poprawna";
     }
-
 }
 //Program wyœwietlaj¹cy odpowiedni komunikat w zale¿noœci od podanej temperatury(np. "ciep³o" dla temperatury powy¿ej 20 stopni Celsjusza,
 //"ch³odno" dla temperatury poni¿ej 10 stopni Celsjusza itd.)
@@ -160,8 +155,67 @@ void task7()
     float temperature;
     cout << "wpisz temperaturê";
     cin >> temperature;
+    if (temperature >= 20)
+    {
+        cout << "ciep³o";
+    }
+    else if (temperature <= 10)
+    {
+        cout << "zimno";
+    }
+    else
+    {
+        cout << "temperatura jest œrednia";
+    }
 }
+//8. Program sprawdzj¹cy czy podana liczba jest z przedia³u <1;15)
+void task8()
+{
+    float number;
+    cout << "wprowadŸ numer";
+    cin >> number;
+    if (number >= 1 && number < 15)
+    {
+        cout << "ta liczba mieœci siê w przedziale";
+    }
+    else
+    {
+        cout << " ta liczba nie mieœci siê w przedziale";
+    }
+}
+//9. Program sprawdzaj¹cy czy osoba jest pe³noletnia.
+void task9()
+{
+    float age;
+    cout << "test czy jesteœ pe³noletni\n ile masz lat?";
+    cin >> age;
+    if (age >= 18)
+    {
+        cout << "jesteœ pe³noletni";
+    }
+    else
+    {
+        cout << "nie jesteœ pe³noletni";
+    }
 
+}
+//10. Program, który sprawdzi czy z podanych d³ugoœci boków mo¿na zrobiæ trójk¹t.
+void task10()
+{
+    float sidea, sideb, sidec;
+    cout << "wprowadŸ d³ugoœci boków\n";
+    cin >> sidea;
+    cin >> sideb;
+    cin >> sidec;
+    if (sidea < sideb + sidec &&  sideb < sidea + sidec &&sidec < sidea + sideb)
+    {
+        cout << "to mo¿e byæ trójk¹t";
+    }
+    else
+    {
+        cout << "to nie mo¿e byæ trójk¹t";
+    }
+}
 
 
 int main()
@@ -173,6 +227,15 @@ int main()
     //task3();
     //task4();
     //task5();
-    task6();
+    //task6();
     //task7();
+    //task8();
+    //task9();
+    task10();
 }
+
+
+
+//8. Program sprawdzj¹cy czy podana liczba jest z przedia³u <1;15)
+//9. Program sprawdzaj¹cy czy osoba jest pe³noletnia.
+//10. Program, który sprawdzi czy z podanych d³ugoœci boków mo¿na zrobiæ trójk¹t.
