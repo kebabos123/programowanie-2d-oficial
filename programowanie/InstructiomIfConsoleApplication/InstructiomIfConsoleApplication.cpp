@@ -216,7 +216,92 @@ void task10()
         cout << "to nie mo¿e byæ trójk¹t";
     }
 }
+//11. Napisz program, który bêdzie dzia³aæ jako prosty kalkulator matematyczny,
+//  umo¿liwiaj¹c u¿ytkownikowi wybór operacji(dodawanie, odejmowanie, mno¿enie, dzielenie) i wprowadzanie liczb do obliczeñ.
+void task11()
+{
+    float firstnumber, secondnumber;
+    int sign;
+    cout << "wpisz dwie liczby\n";
+    cin >> firstnumber;
+    cin >> secondnumber;
+    cout << "wpisz:\n '1' jeœli chcesz dodaæ liczby\n'2' jeœli chcesz odj¹æ liczby\n '3' jeœli chcesz pomno¿yæ liczby\n'4'jeœli chcesz podzieliæ liczby\n ";
+    cin >> sign;
 
+    switch (sign)
+    {
+    case 1:
+        cout << firstnumber + secondnumber;
+        break;
+    case 2:
+        cout << firstnumber - secondnumber;
+        break;
+    case 3:
+        cout << firstnumber * secondnumber;
+        break;
+    case 4:
+        cout << firstnumber / secondnumber;
+        break;
+    default:
+        cout << "jeden ze znaków albo oba nie jest liczb¹";
+    }
+}
+//12. Napisz program, który wczyta numer miesi¹ca i wyœwietli jego s³owny odpowiednik.
+void task12()
+{
+    int month;
+    cout << "wpisz numer miesi¹ca\n";
+    cin >> month;
+    switch (month)
+    {
+    case 1:
+        cout << "styczeñ";
+        break;
+    case 2:
+        cout << "luty";
+        break;
+    case 3:
+        cout << "marzec";
+        break;
+    case 4:
+        cout << "kwiecieñ";
+        break;
+    case 5:
+        cout << "maj";
+        break;
+    case 6:
+        cout << "czerwiec";
+        break;
+    case 7:
+        cout << "lipiec";
+        break;
+    case 8:
+        cout << "sierpieñ";
+        break;
+    case 9:
+        cout << "wrzesieñ";
+        break;
+    case 10:
+        cout << "paŸdziernik";
+        break;
+    case 11:
+        cout << "listopad";
+        break;
+    case 12:
+        cout << "gródzieñ";
+        break;
+    default:
+        cout << "nie ma takiego miesi¹ca";
+        break;
+    }
+}
+//13. Napisz program, który na podstawie wspó³czynników równania kwadratowego(a, b, c) sprawdzi, czy to równanie ma rozwi¹zania rzeczywiste, i jeœli tak,
+//  to je obliczy.
+
+void task13()
+{
+
+}
 
 int main()
 {
@@ -231,7 +316,10 @@ int main()
     //task7();
     //task8();
     //task9();
-    task10();
+    //task10();
+    //task11();
+    //task12();
+    task13();
 }
 
 
@@ -239,3 +327,6 @@ int main()
 //8. Program sprawdzj¹cy czy podana liczba jest z przedia³u <1;15)
 //9. Program sprawdzaj¹cy czy osoba jest pe³noletnia.
 //10. Program, który sprawdzi czy z podanych d³ugoœci boków mo¿na zrobiæ trójk¹t.
+//11. Napisz program, który bêdzie dzia³aæ jako prosty kalkulator matematyczny, umo¿liwiaj¹c u¿ytkownikowi wybór operacji(dodawanie, odejmowanie, mno¿enie, dzielenie) i wprowadzanie liczb do obliczeñ.
+//12. Napisz program, który wczyta numer miesi¹ca i wyœwietli jego s³owny odpowiednik.
+//13. Napisz program, który na podstawie wspó³czynników równania kwadratowego(a, b, c) sprawdzi, czy to równanie ma rozwi¹zania rzeczywiste, i jeœli tak, to je obliczy.
