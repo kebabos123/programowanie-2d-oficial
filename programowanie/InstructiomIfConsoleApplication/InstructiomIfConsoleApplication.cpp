@@ -67,7 +67,7 @@ void task3()
     int year;
     cout << "wypisz rok\n";
     cin >> year;
-    if (year % 4 == 0 && year % 100 != 0||year % 400==0)
+    if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
     {
         cout << "ten rok jest przestêpny";
     }
@@ -139,7 +139,7 @@ void task6()
     cout << "wpisz miesi¹c";
     cin >> month;
 
-    if (day <= 31 && day >= 1 && month <= 12 && month >= 1 )
+    if (day <= 31 && day >= 1 && month <= 12 && month >= 1)
     {
         cout << "ta data jest poprawna\n";
     }
@@ -207,7 +207,7 @@ void task10()
     cin >> sidea;
     cin >> sideb;
     cin >> sidec;
-    if (sidea < sideb + sidec &&  sideb < sidea + sidec &&sidec < sidea + sideb)
+    if (sidea < sideb + sidec && sideb < sidea + sidec && sidec < sidea + sideb)
     {
         cout << "to mo¿e byæ trójk¹t";
     }
@@ -288,7 +288,7 @@ void task12()
         cout << "listopad";
         break;
     case 12:
-        cout << "gródzieñ";
+        cout << "grudzieñ";
         break;
     default:
         cout << "nie ma takiego miesi¹ca";
@@ -300,7 +300,25 @@ void task12()
 
 void task13()
 {
+    float a, b, c;
+    cout << "wpisz a,b,c";
+    cin >> a;
+    cin >> b;
+    cin >> c;
+    float delta = b * b - 4 * a * c;
 
+    if (delta > 0)
+    {
+        cout << "to równanie ma 2 rozwi¹zania: " << (-b-sqrt(delta))/2*a << "oraz " << (-b + sqrt(delta)) / 2*a;
+    }
+    else if(delta==0)
+    {
+        cout << "to równanie ma 1 rozwi¹zanie: "<<-b/2*a;
+    }
+    else
+    {
+        cout << "to równanie nie ma rozwi¹zañ";
+    }
 }
 
 int main()
