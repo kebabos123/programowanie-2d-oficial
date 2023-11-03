@@ -1,5 +1,6 @@
 ﻿
 #include <iostream>
+#include <cmath>
 using namespace std;
 //Program wyświetlający na ekranie kolejne liczby naturalne od 1 do 10
 void task1for()
@@ -14,14 +15,45 @@ void task1for()
 //Program obliczający sumę liczb od 1 do 100
 void task2for()
 {
+    int number = 0;
+    for (int i = 1; i < 101; i++)
+    {
+        number = number + i;
+    }
+    cout << "suma liczb od 1 do 100 wynosi: " << number;
 
+
+}
+//Program wyświetlający na ekranie kwadraty liczb od 1 do 10 (np. 1, 4, 9, 16 itd.)
+void task3for()
+{
+    
+    for (int i = 1; i < 11; i++)
+    {
+        cout <<"\n"<< i * i;
+    }
+}
+//Program obliczający n!.
+void task4for()
+{
+    int number;
+    double factorial=1;
+    cout << "wpisz liczbe\n";
+    cin >> number;
+    for (int i = 1; i <=number ; i++)
+    {
+        factorial = factorial * i;
+    }
+    cout << "silnia liczby winosi: " << factorial;
 }
 
 int main()
 {
     setlocale(LC_CTYPE, "polish");
     //task1for();
-    task2for();
+    //task2for();
+    //task3for();
+    //task4for();
     
 }
 
@@ -40,8 +72,8 @@ WHILE
 FOR
 
 
-* Program wyświetlający na ekranie kwadraty liczb od 1 do 10 (np. 1, 4, 9, 16 itd.)
-* Program obliczający n!.
+
+
 * Program wyświetlający na ekranie silnie z liczb od 1 do 10 (np. 1!, 2!, 3!, 4! itd.)
 * Program wyświetlający na ekranie tabliczkę mnożenia od 1 do 9 (np. 1x1=1, 1x2=2, 1x3=3 itd.).
 * Program wyświetlający na ekranie wszystkie liczby podzielne przez 3 z zakresu od 1 do 100
