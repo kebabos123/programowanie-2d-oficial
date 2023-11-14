@@ -121,6 +121,52 @@ void task10for()
         cout << "\n";
         
     }
+
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 5; j >= 1; j--)
+        {
+            cout <<j+i;
+        }
+        cout << "\n";
+    }
+
+    int up = 0;
+    for (int i = 0; i < 4; i++)
+    {
+        if (i % 2 != 0)
+        {
+            up = 1;
+        }
+        else
+        {
+            up = 0;
+        }
+        for (int j = 1 + up; j <= 6 + up; j++)
+        {
+            if (j % 2 != 0)
+            {
+                cout << '1';
+            }
+            else
+            {
+                cout << '2';
+            }
+        }
+        cout << "\n";
+    }
+
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 1; j <= 3; j++)
+        {
+            for (int k = 1;; k++)
+            {
+                cout << j;
+            }
+        }
+    }
+
 }
 
 int main()
@@ -135,7 +181,7 @@ int main()
     //task7for();
     //task8for();
     //task9for();
-    //task10for();
+    task10for();
     
 }
 
