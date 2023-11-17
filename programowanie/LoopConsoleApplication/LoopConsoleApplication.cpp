@@ -158,13 +158,15 @@ void task10for()
 
     for (int i = 0; i < 4; i++)
     {
-        for (int j = 1; j <= 3; j++)
+        for (int j = i+1; j <= i+3; j++)
         {
-            for (int k = 1;; k++)
+            for (int k = 0; k<j ;k++)
             {
                 cout << j;
             }
+           
         }
+        cout << "\n";
     }
 
 }
@@ -181,7 +183,7 @@ int main()
     //task7for();
     //task8for();
     //task9for();
-    task10for();
+    //task10for();
     
 }
 
