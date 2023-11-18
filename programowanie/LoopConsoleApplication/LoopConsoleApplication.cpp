@@ -1,6 +1,7 @@
 ﻿
 #include <iostream>
 #include <cmath>
+
 using namespace std;
 //Program wyświetlający na ekranie kolejne liczby naturalne od 1 do 10
 void task1for()
@@ -170,6 +171,70 @@ void task10for()
     }
 
 }
+/*Oblicz sumę szeregu 1 / 1 ^ 2 + 1 / 2 ^ 2 + 1 / 3 ^ 2 + ... + 1 / n ^ 2. Jeżeli się nie pomylisz,
+to dla odpowiednio dużej wartości n po przemnożeniu jej przez 6 i spierwiastkowaniu powinieneś otrzymać wartość liczby π(suma szeregu jest równa π2 / 6).
+Zwróć uwagę, że pierwsza wartość indeksu to 1, a nie 0. Dokładność obliczeń można sprawdzić porównując z wartością odczytaną z własności Math.PI.
+*/
+void task11for()
+{
+    double o = 0;
+    for (double n = 1; n < 1000000; n++)
+    {
+       o += pow(1 / n, 2);
+    }
+    cout <<sqrt(o*6);
+}
+/*Miasto T.ma obecnie 100 tys.mieszkańców, ale jego populacja rośnie co roku o 3 % rocznie.Miasto B.ma 300 tys.
+mieszkańców i ta liczba rośnie w tempie 2 % na rok.
+Wykonaj symulację prezentującą liczbę mieszkańców w obu miastach i zatrzymującą się, gdy liczba mieszkańców miasta
+T.przekroczy liczbę z miasta B.*/
+void task1while()
+{
+    int pocT=100'000, pocB=300'000;
+    cout << pocT << "  " << pocB << "\n";
+    while (pocT <= pocB)
+    {
+        pocT = pocT * 1.03;
+        pocB = pocB * 1.02; 
+        cout << pocT << "  " << pocB << "\n";
+    }
+}
+//Napisz program, który poprosi użytkownika o wprowadzenie dowolnej liczby całkowitej.Następnie program powinien obliczyć i wyświetlić liczbę cyfr.
+
+void task2while()
+{
+    int numberOfNumbers=1,number;
+    cout << "wpisz dowolna liczbe calkowita"<<"\n";
+    cin >> number;
+    while (number >= 10)
+    {
+        number /= 10;
+        numberOfNumbers++;
+    }
+    cout <<"liczba cyfr wynosi: "<< numberOfNumbers;
+
+}
+/*Program sprawdzający czy podana liczba jest liczbą doskonałą(czyli taką, której suma dzielników(z wyłączeniem samej siebie) jest równa danej liczbie,
+np. 6 jest liczbą doskonałą, ponieważ 1 + 2 + 3 = 6).*/
+void task3while()
+{
+    int perfectNumber,dp=1,dumD=0;
+    cout << "wpisz leiczbe";
+    cin >> perfectNumber;
+    while (dp < perfectNumber)
+    {
+        if (perfectNumber % dp == 0)
+        {
+            dumD += dp;
+        }  
+        dp++;
+    }
+    if (dumD == perfectNumber)
+    {
+        cout << "ta liczba jest doskonala";
+    }
+    else cout << "ta liczba nie jest doskonala";
+}
 
 int main()
 {
@@ -184,7 +249,10 @@ int main()
     //task8for();
     //task9for();
     //task10for();
-    
+    //task11for();
+    //task1while();
+    //task2while();
+    task3while();
 }
 
 
@@ -195,23 +263,18 @@ DO-WHILE
 * Program wyświetlający na ekranie kwadraty liczb od 1 do 10 (np. 1, 4, 9, 16 itd.) dopóki suma tych kwadratów nie przekroczy 1000.
 
 WHILE
-* Miasto T. ma obecnie 100 tys. mieszkańców, ale jego populacja rośnie co roku o 3% rocznie. Miasto B. ma 300 tys. mieszkańców i ta liczba rośnie w tempie 2% na rok. Wykonaj symulację prezentującą liczbę mieszkańców w obu miastach i zatrzymującą się, gdy liczba mieszkańców miasta T. przekroczy liczbę z miasta B.
-* Napisz program, który poprosi użytkownika o wprowadzenie dowolnej liczby całkowitej. Następnie program powinien obliczyć i wyświetlić liczbę cyfr.
-* Program sprawdzający czy podana liczba jest liczbą doskonałą (czyli taką, której suma dzielników (z wyłączeniem samej siebie) jest równa danej liczbie, np. 6 jest liczbą doskonałą, ponieważ 1 + 2 + 3 = 6).
 
-FOR
-
-
-
-
-
-
-
-
-
-
-
-* Oblicz sumę szeregu 1/1^2 + 1/2^2 + 1/3^2 + ... +1/n^2. Jeżeli się nie pomylisz, to dla odpowiednio dużej wartości n po przemnożeniu jej przez 6 i spierwiastkowaniu powinieneś otrzymać wartość liczby π (suma szeregu jest równa π2/6). Zwróć uwagę, że pierwsza wartość indeksu to 1, a nie 0. Dokładność obliczeń można sprawdzić porównując z wartością odczytaną z własności Math.PI.
 
 */
+
+
+
+
+
+
+
+
+
+
+
 
