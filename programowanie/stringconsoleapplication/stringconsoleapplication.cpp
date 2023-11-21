@@ -7,7 +7,19 @@ using namespace std;
 
 void task1()
 {
-    
+    char signFromUser;
+    cout << "podaj znak: ";
+    cin >> signFromUser;
+    cout << "podales znak:" << signFromUser << "\n";
+    if (signFromUser > 'a' && signFromUser < 'z')
+    {
+        cout << "podales mala litere\n";
+    }
+    else
+    {
+        cout << "nie podales malej litery";
+    }
+
 }
 void task2()
 {
@@ -16,8 +28,6 @@ void task2()
 int main()  
 {
     task1();
-    task2();
-
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
