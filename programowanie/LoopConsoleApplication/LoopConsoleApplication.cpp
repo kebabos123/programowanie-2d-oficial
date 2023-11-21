@@ -184,7 +184,7 @@ void task11for()
     }
     cout << sqrt(o * 6);
 }
-/*Miasto T.ma obecnie 100 tys.mieszkańców, ale jego populacja rośnie co roku o 3 % rocznie.Miasto B.ma 300 tys.
+/*Miasto T.ma obecnie 100 tys.mieszkańców, ale jego populacja rośnie co roku o 3 % rocznie.Miasto B.ma 300 tys..
 mieszkańców i ta liczba rośnie w tempie 2 % na rok.
 Wykonaj symulację prezentującą liczbę mieszkańców w obu miastach i zatrzymującą się, gdy liczba mieszkańców miasta
 T.przekroczy liczbę z miasta B.*/
