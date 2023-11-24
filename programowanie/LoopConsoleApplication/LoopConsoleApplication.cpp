@@ -1,16 +1,17 @@
-﻿﻿
+﻿
 #include <iostream>
 #include <cmath>
+
 using namespace std;
 //Program wyświetlający na ekranie kolejne liczby naturalne od 1 do 10
 void task1for()
 {
-
+    
     for (int i = 1; i < 11; i++)
     {
-        cout << i << "\n";
+        cout << i<<"\n";
     }
-
+    
 }
 //Program obliczający sumę liczb od 1 do 100
 void task2for()
@@ -27,34 +28,34 @@ void task2for()
 //Program wyświetlający na ekranie kwadraty liczb od 1 do 10 (np. 1, 4, 9, 16 itd.)
 void task3for()
 {
-
+    
     for (int i = 1; i < 11; i++)
     {
-        cout << "\n" << i * i;
+        cout <<"\n"<< i * i;
     }
 }
 //Program obliczający n!.
 void task4for()
 {
     int number;
-    double factorial = 1;
+    double factorial=1;
     cout << "wpisz liczbe\n";
     cin >> number;
-    for (int i = 1; i <= number; i++)
+    for (int i = 1; i <=number ; i++)
     {
         factorial = factorial * i;
     }
     cout << "silnia liczby winosi: " << factorial;
-}
+} 
 //Program wyświetlający na ekranie silnie z liczb od 1 do 10 (np. 1!, 2!, 3!, 4!itd.)
 void task5for()
 {
-    int silnia = 1;
+    int silnia=1;
     for (int i = 1; i <= 10; i++)
     {
 
-        silnia = i * silnia;
-        cout << silnia << "\n";
+            silnia = i * silnia;
+            cout << silnia << "\n";
     }
 }
 //Program wyświetlający na ekranie tabliczkę mnożenia od 1 do 9 (np. 1x1 = 1, 1x2 = 2, 1x3 = 3 itd.).
@@ -64,7 +65,7 @@ void task6for()
     {
         for (int k = 1; k < 10; k++)
         {
-            cout << i * k << "\n";
+            cout << i * k<<"\n";
         }
     }
 }
@@ -75,7 +76,7 @@ void task7for()
     {
         if (i % 3 == 0)
         {
-            cout << i << "\n";
+            cout << i<<"\n";
         }
     }
 }
@@ -86,7 +87,7 @@ void task8for()
     for (int i = 1; i <= 10; i++)
     {
         k = (i * i) + k;
-
+        
     }
     cout << k;
 }
@@ -94,14 +95,14 @@ void task8for()
 (ciąg Fibonacciego to ciąg gdzie każdy element jest sumą dwóch poprzednich, np. 0, 1, 1, 2, 3, 5, 8, 13 itd.)*/
 void task9for()
 {
-    int fib1 = 1, fib2 = 0;
+    int fib1=1, fib2=0;
     for (int i = 1; i <= 20; i++)
     {
         int fib = fib1 + fib2;
-        cout << fib << "\n";
+        cout << fib<<"\n";
         fib2 = fib1;
         fib1 = fib;
-
+        
     }
 }
 /** Program, kóry wyświetli poniższe cztery zwory:
@@ -111,7 +112,7 @@ void task9for()
     *          87654        212121        444455555666666*/
 void task10for()
 {
-
+    
     for (int i = 4; i > 0; i--)
     {
         for (int j = 0; i > j; j++)
@@ -119,14 +120,14 @@ void task10for()
             cout << "*";
         }
         cout << "\n";
-
+        
     }
 
     for (int i = 0; i < 4; i++)
     {
         for (int j = 5; j >= 1; j--)
         {
-            cout << j + i;
+            cout <<j+i;
         }
         cout << "\n";
     }
@@ -158,13 +159,13 @@ void task10for()
 
     for (int i = 0; i < 4; i++)
     {
-        for (int j = i + 1; j <= i + 3; j++)
+        for (int j = i+1; j <= i+3; j++)
         {
-            for (int k = 0; k < j; k++)
+            for (int k = 0; k<j ;k++)
             {
                 cout << j;
             }
-
+           
         }
         cout << "\n";
     }
@@ -179,9 +180,9 @@ void task11for()
     double o = 0;
     for (double n = 1; n < 1000000; n++)
     {
-        o += pow(1 / n, 2);
+       o += pow(1 / n, 2);
     }
-    cout << sqrt(o * 6);
+    cout <<sqrt(o*6);
 }
 /*Miasto T.ma obecnie 100 tys.mieszkańców, ale jego populacja rośnie co roku o 3 % rocznie.Miasto B.ma 300 tys.
 mieszkańców i ta liczba rośnie w tempie 2 % na rok.
@@ -189,12 +190,12 @@ Wykonaj symulację prezentującą liczbę mieszkańców w obu miastach i zatrzym
 T.przekroczy liczbę z miasta B.*/
 void task1while()
 {
-    int pocT = 100'000, pocB = 300'000;
+    int pocT=100'000, pocB=300'000;
     cout << pocT << "  " << pocB << "\n";
     while (pocT <= pocB)
     {
         pocT = pocT * 1.03;
-        pocB = pocB * 1.02;
+        pocB = pocB * 1.02; 
         cout << pocT << "  " << pocB << "\n";
     }
 }
@@ -202,22 +203,22 @@ void task1while()
 
 void task2while()
 {
-    int numberOfNumbers = 1, number;
-    cout << "wpisz dowolna liczbe calkowita" << "\n";
+    int numberOfNumbers=1,number;
+    cout << "wpisz dowolna liczbe calkowita"<<"\n";
     cin >> number;
     while (number >= 10)
     {
         number /= 10;
         numberOfNumbers++;
     }
-    cout << "liczba cyfr wynosi: " << numberOfNumbers;
+    cout <<"liczba cyfr wynosi: "<< numberOfNumbers;
 
 }
 /*Program sprawdzający czy podana liczba jest liczbą doskonałą(czyli taką, której suma dzielników(z wyłączeniem samej siebie) jest równa danej liczbie,
 np. 6 jest liczbą doskonałą, ponieważ 1 + 2 + 3 = 6).*/
 void task3while()
 {
-    int perfectNumber, dp = 1, dumD = 0;
+    int perfectNumber,dp=1,dumD=0;
     cout << "wpisz leiczbe";
     cin >> perfectNumber;
     while (dp < perfectNumber)
@@ -225,7 +226,7 @@ void task3while()
         if (perfectNumber % dp == 0)
         {
             dumD += dp;
-        }
+        }  
         dp++;
     }
     if (dumD == perfectNumber)
@@ -265,3 +266,15 @@ WHILE
 
 
 */
+
+
+
+
+
+
+
+
+
+
+
+
