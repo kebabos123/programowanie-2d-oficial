@@ -5,42 +5,128 @@
 #include <cmath>
 using namespace std;
 
+//Napisz program, kt√≥ry bƒôdzie prosi≈Ç o has≈Ço.Nie przepu≈õci dalej dop√≥ki nie zostanie ono podane prawid≈Çowo.
 void task1()
 {
-    
-
-    while ()
+    while (true)
     {
         string password;
-        cout << "wpisz haslo";
+        cout << "enter a password: ";
         cin >> password;
-        
-    }
-    cout << "zalogowano";
+        if (password == "password")
+        {
+            cout << "you're logged in!";
+            break;
+        }
+        else
+        {
+            cout << "incorrect password!\n";
+        }
 
+    }
 }
+//Napisz program, kt√≥ry pobiera od u≈ºytkownika ciƒÖg znak√≥w i wy≈õwietla liczbƒô samog≈Çosek i sp√≥≈Çg≈Çosek w tym ciƒÖgu.
 void task2()
 {
 
+	int liczbaspolglosek = 0, liczbasamoglosek = 0;
+	string ciag;
+	cout << "napisz ciag znakow: ";
+	cin >> ciag;
+	for (int i = 0; i < ciag.length(); i++)
+	{
+		char l = tolower(ciag[i]);
+		if (l == 'a' || l == 'e' || l == 'i' || l == 'o' || l == 'u' || l == 'y')
+		{
+			liczbasamoglosek++;
+		}
+		else if (l == 'b' || l == 'c' || l == 'd' || l == 'f' || l == 'g' || l == 'h' || l == 'j' || l == 'k' || l == 'l' || l == 'm' || l == 'n' || l == 'p' || l == 'q' || l == 'r' || l == 's' || l == 't' || l == 'v' || l == 'w' || l == 'x' || l == 'z')
+		{
+			liczbaspolglosek++;
+		}
+	}
+	cout << "liczba samoglosek wynosi: " << liczbasamoglosek << "\n";
+	cout << "liczba spolglosek wynosi: " << liczbaspolglosek;
+	
 }
-int main()  
+// Popro≈õ u≈ºytkownika o wprowadzenie liczby ca≈Çkowitej w systemie dziesiƒôtnym. Nastƒôpnie skonwertuj tƒô liczbƒô na system dw√≥jkowy (binarny) i wy≈õwietl wynik.
+void task3()
 {
-    task1();
-    task2();
+	string  binary;
+	int number;
+	cin >> number;
+	while (number>=1)
+	{
+		if (number % 2 == 0)
+		{
+			string zero ="0";
+			binary += zero;
+		}
+		else
+		{
+			string one ="1";
+			binary += one;
+		}
+		number /= 2;
+	}
+	for (int i = binary.size()-1; i >=0; i--)
+	{
+		cout << binary[i];
+	}
+}
+void task4()
+{
+	string str;
+	cin >> str;
+	string part1 = str.substr(0, str.length() / 2);
+	string r_part2;
+	if (str.length() % 2 == 0)
+	{
+		string part2 = str.substr(str.length() / 2, str.length() / 2);
+	}
+	else
+	{
+		string part2 = str.substr(str.length() / 2 + 1, str.length() / 2);
+	}
+	for (int i=str.length()-1;i >= str.length()/2;i--)
+	{
+		if (str.length() % 2 != 0 && i==str.length()/2)
+		{
+			break;
+		}
+		r_part2 += str[i];
+	}
+	if (part1 == r_part2)
+	{
+		cout << "to jest palindrom";
+	}
+	else
+	{
+		cout << "to nie jest palindrom";
+	}
+
+}
+
+int main()
+{
+    //task1();
+    //task2();
+	//task3();
+	task4();
 
 }
 /*
-* Napisz program, ktÛry bÍdzie prosi≥ o has≥o. Nie przepuúci dalej dopÛki nie zostanie ono podane prawid≥owo.
-* Napisz program, ktÛry pobiera od uøytkownika ciπg znakÛw i wyúwietla liczbÍ samog≥osek i spÛ≥g≥osek w tym ciπgu.
-* Poproú uøytkownika o wprowadzenie liczby ca≥kowitej w systemie dziesiÍtnym. NastÍpnie skonwertuj tÍ liczbÍ na system dwÛjkowy (binarny) i wyúwietl wynik.
-* Program sprawdzajπcy czy podany ciπg znakÛw jest palindromem (czyli takim, ktÛry czytany od ty≥u jest taki sam, jak czytany od przodu, np. "kajak")
-* Program sprawdzajπcy czy podane dwa s≥owa sπ anagramami (czyli takimi, ktÛre zawierajπ te same litery, ale w innym uk≥adzie, np. "klasa" i "salka")
+
+
+
+* Program sprawdzajƒÖcy czy podany ciƒÖg znak√≥w jest palindromem (czyli takim, kt√≥ry czytany od ty≈Çu jest taki sam, jak czytany od przodu, np. "kajak")
+* Program sprawdzajƒÖcy czy podane dwa s≈Çowa sƒÖ anagramami (czyli takimi, kt√≥re zawierajƒÖ te same litery, ale w innym uk≈Çadzie, np. "klasa" i "salka")
 *
 
-* Program wyciπgajπcy informacje z numeru PESEL
-* Program implementujπcy algorytm szyfrowania Cezara (proste szyfrowanie, w ktÛrym kaødy znak w tekúcie jest zastÍpowany innym znakiem, przesuniÍtym o sta≥π liczbÍ pozycji w alfabecie).
+* Program wyciƒÖgajƒÖcy informacje z numeru PESEL
+* Program implementujƒÖcy algorytm szyfrowania Cezara (proste szyfrowanie, w kt√≥rym ka≈ºdy znak w tek≈õcie jest zastƒôpowany innym znakiem, przesuniƒôtym o sta≈ÇƒÖ liczbƒô pozycji w alfabecie).
 
 
-* Program ktÛry na wejúciu przyjmie rÛwnanie a na wyjúciu da rÛwnanie w odwrotnej notacji polskiej ONP. Np. na wejúciu 2+3*4 na wyjúcu da 234*+
-* Program, ktÛry na wejúciu przyjmie rÛwanie w ONP a na wyjúciu wyúwietli wynik rÛwania.
+* Program kt√≥ry na wej≈õciu przyjmie r√≥wnanie a na wyj≈õciu da r√≥wnanie w odwrotnej notacji polskiej ONP. Np. na wej≈õciu 2+3*4 na wyj≈õcu da 234*+
+* Program, kt√≥ry na wej≈õciu przyjmie r√≥wanie w ONP a na wyj≈õciu wy≈õwietli wynik r√≥wania.
 */
