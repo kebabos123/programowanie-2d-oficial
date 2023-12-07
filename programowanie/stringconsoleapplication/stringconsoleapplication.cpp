@@ -8,22 +8,22 @@ using namespace std;
 //Napisz program, który będzie prosił o hasło.Nie przepuści dalej dopóki nie zostanie ono podane prawidłowo.
 void task1()
 {
-    while (true)
-    {
-        string password;
-        cout << "enter a password: ";
-        cin >> password;
-        if (password == "password")
-        {
-            cout << "you're logged in!";
-            break;
-        }
-        else
-        {
-            cout << "incorrect password!\n";
-        }
+	while (true)
+	{
+		string password;
+		cout << "enter a password: ";
+		cin >> password;
+		if (password == "password")
+		{
+			cout << "you're logged in!";
+			break;
+		}
+		else
+		{
+			cout << "incorrect password!\n";
+		}
 
-    }
+	}
 }
 //Napisz program, który pobiera od użytkownika ciąg znaków i wyświetla liczbę samogłosek i spółgłosek w tym ciągu.
 void task2()
@@ -47,7 +47,7 @@ void task2()
 	}
 	cout << "liczba samoglosek wynosi: " << liczbasamoglosek << "\n";
 	cout << "liczba spolglosek wynosi: " << liczbaspolglosek;
-	
+
 }
 // Poproś użytkownika o wprowadzenie liczby całkowitej w systemie dziesiętnym. Następnie skonwertuj tę liczbę na system dwójkowy (binarny) i wyświetl wynik.
 void task3()
@@ -55,25 +55,26 @@ void task3()
 	string  binary;
 	int number;
 	cin >> number;
-	while (number>=1)
+	while (number >= 1)
 	{
 		if (number % 2 == 0)
 		{
-			string zero ="0";
+			string zero = "0";
 			binary += zero;
 		}
 		else
 		{
-			string one ="1";
+			string one = "1";
 			binary += one;
 		}
 		number /= 2;
 	}
-	for (int i = binary.size()-1; i >=0; i--)
+	for (int i = binary.size() - 1; i >= 0; i--)
 	{
 		cout << binary[i];
 	}
 }
+//Program sprawdzający czy podany ciąg znaków jest palindromem (czyli takim, który czytany od tyłu jest taki sam, jak czytany od przodu, np. "kajak")
 void task4()
 {
 	string str;
@@ -88,9 +89,9 @@ void task4()
 	{
 		string part2 = str.substr(str.length() / 2 + 1, str.length() / 2);
 	}
-	for (int i=str.length()-1;i >= str.length()/2;i--)
+	for (int i = str.length() - 1; i >= str.length() / 2; i--)
 	{
-		if (str.length() % 2 != 0 && i==str.length()/2)
+		if (str.length() % 2 != 0 && i == str.length() / 2)
 		{
 			break;
 		}
@@ -106,24 +107,65 @@ void task4()
 	}
 
 }
+//Program sprawdzający czy podane dwa słowa są anagramami (czyli takimi, które zawierają te same litery, ale w innym układzie, np. "klasa" i "salka")
+void task5()
+{
+
+}
+//Program wyciągający informacje z numeru PESEL
+void task6()
+{
+	string pesel;
+	cin >> pesel;
+	if (pesel.length() != 11)
+	{
+		return;
+	}
+	string year = pesel.substr(0, 2);
+	string m = pesel.substr(2, 2);
+	string d = pesel.substr(4, 2);
+	int month = (m[0] - '0') * 10 + m[1] - '0';
+	int day = (d[0] - '0') * 10 + d[1] - '0';
+	if (month > 12 || month <= 0 || day < 1 || day>31)
+	{
+		return;
+	}
+	if (pesel[9] % 2 == 1)
+	{
+		cout << "gender: male\n";
+	}
+	else
+	{
+		cout << "gender: female\n";
+	}
+	cout << "your birth date is" << day << "." << month << "." << year;
+
+
+
+
+
+
+}
 
 int main()
 {
-    //task1();
-    //task2();
+	//task1();
+	//task2();
 	//task3();
-	task4();
+	//task4();
+	//task5();
+	task6();
 
 }
 /*
 
 
 
-* Program sprawdzający czy podany ciąg znaków jest palindromem (czyli takim, który czytany od tyłu jest taki sam, jak czytany od przodu, np. "kajak")
-* Program sprawdzający czy podane dwa słowa są anagramami (czyli takimi, które zawierają te same litery, ale w innym układzie, np. "klasa" i "salka")
+*
+*
 *
 
-* Program wyciągający informacje z numeru PESEL
+*
 * Program implementujący algorytm szyfrowania Cezara (proste szyfrowanie, w którym każdy znak w tekście jest zastępowany innym znakiem, przesuniętym o stałą liczbę pozycji w alfabecie).
 
 
