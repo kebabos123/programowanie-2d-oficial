@@ -121,11 +121,33 @@ void task6()
 	{
 		return;
 	}
-	string year = pesel.substr(0, 2);
-	string m = pesel.substr(2, 2);
-	string d = pesel.substr(4, 2);
-	int month = (m[0] - '0') * 10 + m[1] - '0';
-	int day = (d[0] - '0') * 10 + d[1] - '0';
+	for (int i = 0; i <= 10; i++)
+	{
+		if (pesel[i] < 48 || pesel[i]>57)
+		{
+			return;
+		}
+	}
+	int year = (pesel[0] - '0') * 10 + pesel[1] - '0';
+	int month = (pesel[2] - '0') * 10 + pesel[3] - '0';
+	int day = (pesel[4] - '0') * 10 + pesel[5] - '0';
+	int control = 
+		  (pesel[0]-'0') * 1
+		+ (pesel[1]-'0') * 3
+		+ (pesel[2]-'0') * 7
+		+ (pesel[3]-'0') * 9
+		+ (pesel[4]-'0') * 1
+		+ (pesel[5]-'0') * 3
+		+ (pesel[6]-'0') * 7
+		+ (pesel[7]-'0') * 9
+		+ (pesel[8]-'0') * 1
+		+ (pesel[9]-'0') * 3
+		+ (pesel[10]-'0')* 1;
+
+	if (control % 10 != 0)
+	{
+		return;
+	}
 	if (month > 12 || month <= 0 || day < 1 || day>31)
 	{
 		return;
