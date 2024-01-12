@@ -14,7 +14,7 @@ void task1()
         cout << "Podaj liczbe\n";
         cin >> numbers[i];
     }
-
+    
     for (int i = SIZE_OF_ARRAY - 1; i >= 0; i--)
     {
         cout << "Podana liczba" << numbers[i] << "\n";
@@ -97,12 +97,39 @@ void task3()
 
 void task4()
 {
-    const int UPPER_RANGE = 8;
+    const int UPPER_RANGE = 100;
+    const int LOWER_RANGE = 2;
+    //liczby pierwsze
+    int primeNumbers[UPPER_RANGE + 1];
+    for (int i = 2; i < UPPER_RANGE + 1; i++)
+    {
+        primeNumbers[i] = true;
+    }
+    for (int i = 2; i < UPPER_RANGE + 1; i++)
+    {
+        if (primeNumbers[i])
+        {
+            for (int j = i + i; j < UPPER_RANGE + 1; j = j + i)
+            {
+                primeNumbers[j] = false;
+            }
+        }
+    }
+
+    for (int i = 2; i < UPPER_RANGE + 1; i++)
+    {
+        if (primeNumbers[i])
+            cout <<i<< ',';
+    }
+    cout << '\n';
+}
+void task5()
+{
+    const int UPPER_RANGE = 10;
     const int LOWER_RANGE = 5;
 
-    const int SIZE_OF_ARRAY = 5;
+    const int SIZE_OF_ARRAY = 3;
     int numbers[SIZE_OF_ARRAY];
-
     srand(time(NULL));
 
     for (int i = 0; i < SIZE_OF_ARRAY; i++)
@@ -149,11 +176,10 @@ void task4()
         cout << "liczba " << i + LOWER_RANGE << "wyst¹pi³a " << numbersOfOccurences[i] << "razy\n";
     }
 }
-
 int main()
 {
     //task1();
     //task2();
     //task3();
-    //task4();
+    task4();
 }
