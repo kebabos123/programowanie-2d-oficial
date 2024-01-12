@@ -1,63 +1,159 @@
-// array console application.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+
 using namespace std;
+
+//Napisz program, który wczyta 5 liczb a natêpnie je wyswietl na konsoli w odwrotej kolejnosci
 
 void task1()
 {
-    const int UPPER_RANGE=1000;
-    const int LOWER_RANGE = 0;
-    const int SIZE_OF_ARRAY = 100;
+    const int SIZE_OF_ARRAY = 5;
     int numbers[SIZE_OF_ARRAY];
+
+    for (int i = 0; i < SIZE_OF_ARRAY; i++)
+    {
+        cout << "Podaj liczbe\n";
+        cin >> numbers[i];
+    }
+
+    for (int i = SIZE_OF_ARRAY - 1; i >= 0; i--)
+    {
+        cout << "Podana liczba" << numbers[i] << "\n";
+    }
+}
+
+void task2()
+{
+    const int UPPER_RANGE = 100;
+    const int LOWER_RANGE = 5;
+
+    const int SIZE_OF_ARRAY = 5;
+    int numbers[SIZE_OF_ARRAY];
+
     srand(time(NULL));
+
     for (int i = 0; i < SIZE_OF_ARRAY; i++)
     {
         numbers[i] = rand() % (UPPER_RANGE - LOWER_RANGE + 1) + LOWER_RANGE;
     }
-    for (int i = 0; i < SIZE_OF_ARRAY; i++)
+    
+    for ( int i = 0; i < SIZE_OF_ARRAY; i++)
     {
-        cout << numbers[i] << ',';
-        cout << '\n';
+        cout << numbers[i] << ", ";
     }
-    //szukanie maksimum
+    cout << "\n";
+
+    //szukanie maksimum 
     int max = numbers[0];
-    for (int i = 1; i  < SIZE_OF_ARRAY; i++)
+    for (int i = 1; i < SIZE_OF_ARRAY; i++)
     {
         if (numbers[i] > max)
-        {
             max = numbers[i];
-        }
-        //szukanie minimum
     }
+
+    //szukanie minimum
     int min = numbers[0];
     for (int i = 1; i < SIZE_OF_ARRAY; i++)
     {
         if (numbers[i] < min)
-        {
             min = numbers[i];
-        }
     }
-    cout << "najwi�ksza liczba to: " << max << '\n';
-    cout << "najmniejsza liczba to: " << min << '\n';
-}
-void task2()
-{
 
+    cout << "Maksymalna wartoœæ to: " << max << "\n";
+    cout << "Minimalna wartoœæ to : " << min << "\n";
 }
+
+//Napisz program obliczj¹cy œredi¹ arytmetyczn¹ elementów tablicy liczb ca³kowitcy
+void task3()
+{
+    const int UPPER_RANGE = 10;
+    const int LOWER_RANGE = 5;
+
+    const int SIZE_OF_ARRAY = 3;
+    int numbers[SIZE_OF_ARRAY];
+
+    srand(time(NULL));
+
+    for (int i = 0; i < SIZE_OF_ARRAY; i++)
+    {
+        numbers[i] = rand() % (UPPER_RANGE - LOWER_RANGE + 1) + LOWER_RANGE;
+    }
+
+    for (int i = 0; i < SIZE_OF_ARRAY; i++)
+    {
+        cout << numbers[i] << ", ";
+    }
+    cout << "\n";
+
+    int sum = 0;
+
+    for (int i = 0; i < SIZE_OF_ARRAY; i++)
+    {
+        sum += numbers[i];
+    }
+
+    double average = sum * 1.0 / SIZE_OF_ARRAY;
+    cout << "Œrednia arytmetyczna z liczb wynosi: " << average << "\n";
+}
+
+void task4()
+{
+    const int UPPER_RANGE = 8;
+    const int LOWER_RANGE = 5;
+
+    const int SIZE_OF_ARRAY = 5;
+    int numbers[SIZE_OF_ARRAY];
+
+    srand(time(NULL));
+
+    for (int i = 0; i < SIZE_OF_ARRAY; i++)
+    {
+        numbers[i] = rand() % (UPPER_RANGE - LOWER_RANGE + 1) + LOWER_RANGE;
+    }
+
+    for (int i = 0; i < SIZE_OF_ARRAY; i++)
+    {
+        cout << numbers[i] << ", ";
+    }
+    cout << "\n";
+
+    //wersja1
+    for (int numberFromRange = LOWER_RANGE; numberFromRange < UPPER_RANGE; numberFromRange++)
+    {
+        int numbersOfOccurences = 0;
+        for (int j = 0; j < SIZE_OF_ARRAY; j++)
+        {
+            if (numbers[j] == numberFromRange)
+                numbersOfOccurences++;
+        }
+
+        cout << "liczba " << numberFromRange << "wyst¹pi³a " << numbersOfOccurences << "razy\n";
+    }
+
+    //wersja2
+    cout << "wersja2 \n";
+    int numbersOfOccurences[UPPER_RANGE - LOWER_RANGE + 1];
+
+    for (int i = 0; i < UPPER_RANGE - LOWER_RANGE + 1; i++)
+    {
+        numbersOfOccurences[i] = 0;
+    }
+
+    for (int j = 0; j < SIZE_OF_ARRAY; j++)
+    {
+        numbersOfOccurences[numbers[j] - LOWER_RANGE]++;
+    }
+
+    for (int i = 0; i < UPPER_RANGE - LOWER_RANGE + 1; i++)
+    {
+        if (numbersOfOccurences[i] != 0);
+            cout << "liczba " << i + LOWER_RANGE << "wyst¹pi³a " << numbersOfOccurences[i] << "razy\n";
+    }
+}
+
 int main()
 {
-    task1();
-    task2();
+    //task1();
+    //task2();
+    //task3();
+    //task4();
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
