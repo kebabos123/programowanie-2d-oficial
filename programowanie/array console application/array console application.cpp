@@ -1,8 +1,8 @@
-#include <iostream>
+﻿#include <iostream>
 
 using namespace std;
 
-//Napisz program, kt�ry wczyta 5 liczb a nat?pnie je wyswietl na konsoli w odwrotej kolejnosci
+//Napisz program, który wczyta 5 liczb a natêpnie je wyswietl na konsoli w odwrotej kolejnosci
 
 void task1()
 {
@@ -58,11 +58,11 @@ void task2()
             min = numbers[i];
     }
 
-    cout << "Maksymalna warto?? to: " << max << "\n";
-    cout << "Minimalna warto?? to : " << min << "\n";
+    cout << "Maksymalna wartoœæ to: " << max << "\n";
+    cout << "Minimalna wartoœæ to : " << min << "\n";
 }
 
-//Napisz program obliczj?cy ?redi? arytmetyczn? element�w tablicy liczb ca?kowitcy
+//Napisz program obliczj¹cy œredi¹ arytmetyczn¹ elementów tablicy liczb ca³kowitcy
 void task3()
 {
     const int UPPER_RANGE = 10;
@@ -92,7 +92,7 @@ void task3()
     }
 
     double average = sum * 1.0 / SIZE_OF_ARRAY;
-    cout << "?rednia arytmetyczna z liczb wynosi: " << average << "\n";
+    cout << "Œrednia arytmetyczna z liczb wynosi: " << average << "\n";
 }
 
 void task4()
@@ -126,7 +126,7 @@ void task4()
                 numbersOfOccurences++;
         }
 
-        cout << "liczba " << numberFromRange << "wyst?pi?a " << numbersOfOccurences << "razy\n";
+        cout << "liczba " << numberFromRange << "wyst¹pi³a " << numbersOfOccurences << "razy\n";
     }
 
     //wersja2
@@ -146,7 +146,7 @@ void task4()
     for (int i = 0; i < UPPER_RANGE - LOWER_RANGE + 1; i++)
     {
         if (numbersOfOccurences[i] != 0);
-        cout << "liczba " << i + LOWER_RANGE << "wyst?pi?a " << numbersOfOccurences[i] << "razy\n";
+        cout << "liczba " << i + LOWER_RANGE << "wyst¹pi³a " << numbersOfOccurences[i] << "razy\n";
     }
 }
 
