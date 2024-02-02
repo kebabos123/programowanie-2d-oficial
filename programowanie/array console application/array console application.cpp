@@ -98,7 +98,7 @@ void task3()
 void task4()
 {
     const int UPPER_RANGE = 100;
-    const int LOWER_RANGE = 2;
+    const int LOWER_RANGE = 0;
     //liczby pierwsze
     int primeNumbers[UPPER_RANGE + 1];
     for (int i = 2; i < UPPER_RANGE + 1; i++)
