@@ -1,12 +1,10 @@
-// struct_console_application.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
 
 #include <iostream>
 using namespace std;
 struct point
 {
     int x;
-    int y;
+    int y;  
     int z;
 };
 float distanceFromCenter(int x, int y, int z)
