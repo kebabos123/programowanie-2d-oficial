@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <cmath>
 using namespace std;
 
@@ -81,30 +81,32 @@ using namespace std;
 //           float diagonal = sqrt(height * height + width * width);
 //        }
 //   };
-class Konto
+class Account
 {
 private:
     string login;
     string password;
     double balance;
-public:
-    Konto()
-    {
-        login = "undefined";
-        password = "undefined";
-        balance = 0;
-    }
+
     void createLogin()
     {
-        cout << "wpisz login"<<'\n';
+        cout << "rejestrowanie: \n";
+        cout << "wpisz login" << '\n';
         cin >> login;
         cout << '\n';
     }
     void createPassword()
     {
-        cout << "wpisz hasło"<<'\n';
+        cout << "wpisz hasło" << '\n';
         cin >> password;
         cout << '\n';
+    }
+
+public:
+    Account()
+    {
+        createLogin();
+        createPassword();
     }
     void logIn()
     {
@@ -114,7 +116,7 @@ public:
         {
             if (login != "undefined" && password != "undefined")
             {
-                cout << "logowanie:\n"<<"wpisz login\n";
+                cout << "logowanie:\n" << "wpisz login\n";
                 cin >> l;
                 cout << "wpisz hasło\n";
                 cin >> p;
@@ -133,13 +135,41 @@ public:
     }
     void addMoney()
     {
-        cout << "ile pieniędzy chcesz dodać na konto?";
-        cin >> balance;
-        cout << "dodane!";
+        double kwota = 0;
+        cout << "ile pieniędzy chcesz dodać na konto?\n";
+        cin >> kwota;
+        balance += kwota;
+        cout << "dodane!\n";
     }
-    void transaction(Konto &targetAccount)
+    void withdrawMoney()
     {
-        targetAccount.
+        double kwota = 0;
+        while (true)
+        {
+            cout << "ile pieniędzy chcesz wypłacić z konta?\n";
+            cin >> kwota;
+            if (balance >= kwota)
+            {
+                balance -= kwota;
+                cout << "dodane!\n";
+                break;
+            }
+            else
+            {
+                cout << "masz za mało\n";
+                continue;
+            }
+        }
+
+
+    }
+    void transaction(int ile, Account& target)
+    {
+
+    }
+    void information()
+    {
+        cout << "twój balans wynosi: " << balance<<'\n';
     }
 
 };
@@ -147,19 +177,20 @@ int main()
 {
     setlocale(LC_CTYPE, "polish");
     //Point firstPoint;
-   
+
     // firstPoint.x = 3;
     // firstPoint.y = 5;
     //firstPoint.z = 8;
     //rect firstRectangle;   
-    Konto firstAccount;
-    firstAccount.createLogin();
-    firstAccount.createPassword();
+    Account firstAccount;
     firstAccount.logIn();
     firstAccount.addMoney();
-    Konto secondAccount;
-    secondAccount.createLogin();
-    secondAccount.createPassword();
+    firstAccount.withdrawMoney();
+    firstAccount.information();
+
+    Account secondAccount;
     secondAccount.logIn();
     secondAccount.addMoney();
+    secondAccount.withdrawMoney();
+    secondAccount.information();
 }
